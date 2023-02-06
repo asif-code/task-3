@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Factorial
+      const number = Number(prompt("Enter a positive integer: "));
+      if (number < 0) {
+        console.log("Error! Factorial for negative number does not exist.");
+      } else if (number === 0) {
+        console.log(`The factorial of ${number} is 1.`);
+      } else {
+        let f = 1;
+        for (i = 1; i <= number; i++) {
+          f *= i;
+        }
+        console.log(`The factorial of ${number} is ${f}.`);
+      }
+
+      // Plaindrome
+      function checkPalindrome(string) {
+        const len = string.length;
+        for (let i = 0; i < len / 2; i++) {
+          if (string[i] !== string[len - 1 - i]) {
+            return "It is not a palindrome";
+          }
+        }
+        return "It is a palindrome";
+      }
+      const string = prompt("Enter a string: ");
+      const value = checkPalindrome(string);
+      console.log(value);
+
+      //   Prime Numbers
+      const number1 = Number(prompt("Enter a positive number: "));
+      let prime = true;
+      if (number1 === 1) {
+        console.log("1 is neither prime nor composite number.");
+      } else if (number1 > 1) {
+        for (let i = 2; i < number1; i++) {
+          if (number1 % i == 0) {
+            prime = false;
+            break;
+          }
+        }
+
+        if (prime) {
+          console.log(`${number1} is a prime number`);
+        } else {
+          console.log(`${number1} is a not prime number`);
+        }
+      } else {
+        console.log("The number is not a prime number.");
+      }
+
+      //   Secound largest array
+      let input = [];
+      let size = 5;
+      for (var a = 0; a < size; a++) {
+        input[a] = prompt("Enter array Element " + (a + 1));
+      }
+      console.log(input);
+
+      var arr = input;
+      arr.sort(function (a, b) {
+        return b - a;
+      });
+      console.log(arr[1]);
+    </script>
+  </body>
+</html>
